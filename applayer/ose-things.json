@@ -15,24 +15,15 @@
             "name": "springboot-app-image"
          },
          "spec": {
-            "triggers": [
-               {
-                  "type": "ImageChange",
-                  "imageChange": {}
-               }
-            ],
             "source": {
                "type": "Git",
                "git": {
                   "uri": "https://github.com/noelo/custombuilder.git",
                   "ref": "master"
-               }
+               },"contextDir": "applayer/"
             },
             "strategy": {
-               "type": "Docker",
-               "dockerStrategy": {
-                  "dockerfilePath": "applayer"
-               }
+               "type": "Docker"
             },
              "output": {
                "to": {
