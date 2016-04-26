@@ -1,4 +1,4 @@
-FROM 172.30.79.54:5000/custombuilder/springboot-base
+FROM springboot-base
  
 ENV JAVA_HOME=/etc/alternatives/java_sdk_openjdk/
 ENV BUILDER_VERSION 1.0
