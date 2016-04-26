@@ -19,10 +19,10 @@ ENV PATH=/opt/maven/bin/:$PATH
 ENV JAVA_HOME=/etc/alternatives/java_sdk_openjdk/
 ENV BUILDER_VERSION 1.0
  
-#LABEL io.k8s.description="Platform for building Spring Boot applications with gradle"
- 
+LABEL io.k8s.description="Platform for building Spring Boot applications"
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
-#COPY ./.sti/bin/ /usr/local/sti
+
+COPY ./.sti/bin/ /usr/local/sti
 RUN chmod -R a+x /usr/local/sti/*
  
 #COPY settings.xml /usr/local/maven/conf/

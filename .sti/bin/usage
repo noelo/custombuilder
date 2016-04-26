@@ -1,0 +1,4 @@
+#!/bin/bash -e
+cat <<EOF
+Sample base builder, this is intended to be layered with apps and config
+EOF
