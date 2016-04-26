@@ -1,0 +1,62 @@
+{
+   "kind": "List",
+   "apiVersion": "v1",
+   "metadata": {
+      "name": "springboot-app-image",
+      "labels": {
+         "custombuilder": "true"
+      }
+   },
+   "items": [
+                        {
+         "kind": "BuildConfig",
+         "apiVersion": "v1",
+         "metadata": {
+            "name": "springboot-app-image"
+         },
+         "spec": {
+            "triggers": [
+               {
+                  "type": "ImageChange",
+                  "imageChange": {}
+               }
+            ],
+            "source": {
+               "type": "Git",
+               "git": {
+                  "uri": "https://github.com/noelo/custombuilder.git",
+                  "ref": "master"
+               }
+            },
+            "strategy": {
+               "type": "Docker",
+               "dockerStrategy": {
+                  "dockerfilePath": "applayer"
+               }
+            },
+             "output": {
+               "to": {
+                  "kind": "ImageStreamTag",
+                  "name": "springboot-app-image:latest"
+               }
+            },
+            "resources": {}
+         }
+      },
+      {
+         "kind": "ImageStream",
+         "apiVersion": "v1",
+         "metadata": {
+            "name": "springboot-app-image"
+         },
+         "spec": {
+            "dockerImageRepository": "",
+            "tags": [
+               {
+                  "name": "latest"
+               }
+            ]
+         }
+      }
+  ]
+  }
