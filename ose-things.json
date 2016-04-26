@@ -38,8 +38,7 @@
                "git": {
                   "uri": "https://github.com/noelo/custombuilder.git",
                   "ref": "master"
-               },
-               "contextDir": "recipes/config-layering/springboot-base-builder/"
+               }
             },
             "strategy": {
                "type": "Docker",

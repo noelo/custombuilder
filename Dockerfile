@@ -29,8 +29,6 @@ COPY settings.xml /usr/local/maven/conf/
  
 RUN chown -R 1001:1001 /opt/openshift
  
-# Install the Macquarie Root CA
- 
 # This default user is created in the openshift/base-centos7 image
 USER 1001
 RUN env
