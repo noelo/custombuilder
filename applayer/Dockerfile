@@ -1,4 +1,5 @@
 FROM springboot-base
+MAINTAINER Noel OConnor  <noconnor@redhat.com>
  
 ENV JAVA_HOME=/etc/alternatives/java_sdk_openjdk/
 ENV BUILDER_VERSION 1.0
