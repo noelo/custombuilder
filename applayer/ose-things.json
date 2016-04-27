@@ -27,7 +27,14 @@
 			   		"from": {
 		                  "kind": "ImageStreamTag",
 		                  "name": "springboot-base:latest"
-		               }
+		               },
+					   "noCache": true,
+					   "env": [
+					            {
+					                "name": "APP_FILENAME",
+					                "value": "http://nexus-ci.cloudapps.nocosetest.com/content/repositories/releases/com/noc/test/sampleapp/1.0/sampleapp-1.0.jar"
+					            }
+					          ]
 		        },
                "type": "Docker"
             },
