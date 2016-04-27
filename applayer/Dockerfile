@@ -12,5 +12,5 @@ COPY ./bin/ /tmp/
 USER 1001
 RUN env
 RUN /tmp/curlget.sh  
-RUN chown -R 1001:1001 /opt/openshift
+RUN ls -altr /opt/openshift/
 CMD ["usage"]
