@@ -8,7 +8,6 @@ LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
 
 
 COPY ./bin/ /tmp/
-RUN chown -R 1001:1001 /tmp/curlget.sh
  
 USER 1001
 RUN env
