@@ -7,10 +7,11 @@ LABEL io.k8s.description="Platform for building Spring Boot applications"
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
 
 
-COPY ./bin/ /opt/openshift/bin
-RUN chown -R 1001:1001 /opt/openshift
+COPY ./bin/ /tmp/
+RUN chown -R 1001:1001 /tmp/curlget.sh
  
 USER 1001
 RUN env
-RUN /opt/openshift/bin/curlget.sh  
+RUN /tmp/curlget.sh  
+RUN chown -R 1001:1001 /opt/openshift
 CMD ["usage"]
