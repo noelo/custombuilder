@@ -23,6 +23,12 @@
                },"contextDir": "applayer/"
             },
             "strategy": {
+			    "dockerStrategy":{
+			   		"from": {
+		                  "kind": "ImageStreamTag",
+		                  "name": "springboot-base:latest"
+		               }
+		        },
                "type": "Docker"
             },
              "output": {
