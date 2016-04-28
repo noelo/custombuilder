@@ -1,4 +1,4 @@
-FROM rhel7:latest
+FROM centos7:latest
  
 ENV MAVEN_VERSION 3.3.3
  
