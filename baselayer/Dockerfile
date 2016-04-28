@@ -25,7 +25,7 @@ LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
 COPY ./.sti/bin/ /usr/local/sti
 RUN chmod -R a+x /usr/local/sti/*
  
-COPY settings.xml /usr/local/maven/conf/
+#COPY settings.xml /usr/local/maven/conf/
  
 RUN chown -R 1001:1001 /opt/openshift
  
