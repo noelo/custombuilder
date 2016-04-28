@@ -1,4 +1,4 @@
-FROM rhel7:rhel7
+FROM rhel7:latest
  
 ENV MAVEN_VERSION 3.3.3
  
@@ -19,18 +19,14 @@ ENV PATH=/opt/maven/bin/:$PATH
 ENV JAVA_HOME=/etc/alternatives/java_sdk_openjdk/
 ENV BUILDER_VERSION 1.0
  
-LABEL io.k8s.description="Platform for building Spring Boot applications"
+LABEL io.k8s.description="Platform for building Spring Boot applications, layer contains java8 maven"
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/sti
 
 COPY ./.sti/bin/ /usr/local/sti
 RUN chmod -R a+x /usr/local/sti/*
  
-#COPY settings.xml /usr/local/maven/conf/
+COPY settings.xml /usr/local/maven/conf/
  
 RUN chown -R 1001:1001 /opt/openshift
- 
-# This default user is created in the openshift/base-centos7 image
-USER 1001
-RUN env
  
 CMD ["usage"]
