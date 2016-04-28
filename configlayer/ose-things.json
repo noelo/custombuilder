@@ -2,7 +2,7 @@
    "kind": "List",
    "apiVersion": "v1",
    "metadata": {
-      "name": "springboot-full-image",
+      "name": "springboot-full-imagebuilder",
       "labels": {
          "custombuilder": "true"
       }
@@ -12,7 +12,7 @@
          "kind": "BuildConfig",
          "apiVersion": "v1",
          "metadata": {
-            "name": "springboot-full-image"
+            "name": "springboot-full-imagebuilder"
          },
          "spec": {
             "source": {
