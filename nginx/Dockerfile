@@ -4,7 +4,12 @@ COPY nginx-repo/nginx-repo /etc/yum.repos.d/nginx.repo
  
 RUN yum install nginx -y && yum clean all -y
 
-LABEL io.k8s.description="Nginx web server image"
+COPY conf/default.conf /etc/nginx/conf.d/
 
+LABEL io.k8s.description="Nginx web server image listning on 8090"
+
+RUN ln -sf /dev/stdout /var/log/nginx/access.log  && ln -sf /dev/stderr /var/log/nginx/error.log
+
+EXPOSE 8090
  
-CMD ["usage"]
+CMD ["nginx", "-g", "daemon off;"]
