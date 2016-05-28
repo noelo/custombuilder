@@ -10,8 +10,11 @@ LABEL io.k8s.description="Nginx web server image listning on 8090"
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log  && ln -sf /dev/stderr /var/log/nginx/error.log
 
-EXPOSE 8090
+RUN mkdir -p /var/cache/nginx
+
+RUN chown -R nginx:nginx /var/cache/nginx
 
 USER nginx 
 
+EXPOSE 8090
 CMD ["nginx", "-g", "daemon off;"]
