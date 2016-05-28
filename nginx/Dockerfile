@@ -5,6 +5,7 @@ COPY nginx-repo/nginx-repo /etc/yum.repos.d/nginx.repo
 RUN yum install nginx -y && yum clean all -y
 
 COPY conf/default.conf /etc/nginx/conf.d/
+COPY conf/nginx.conf /etc/nginx/nginx.conf
 
 LABEL io.k8s.description="Nginx web server image listning on 8090"
 
