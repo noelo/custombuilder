@@ -9,7 +9,6 @@ COPY conf/default.conf /etc/nginx/conf.d/
 LABEL io.k8s.description="Nginx web server image listning on 8090"
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log  && ln -sf /dev/stderr /var/log/nginx/error.log
-RUN groupadd -r nginx && useradd -r -g nginx nginx
 
 EXPOSE 8090
 
