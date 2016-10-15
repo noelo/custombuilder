@@ -1,4 +1,4 @@
-FROM rhel7:latest
+FROM rhel7.2:latest
  
 COPY nginx-repo/nginx-repo /etc/yum.repos.d/nginx.repo
  
