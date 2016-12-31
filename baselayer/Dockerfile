@@ -1,4 +1,4 @@
-FROM centos7:latest
+FROM centos:latest
  
 ENV MAVEN_VERSION 3.3.3
  
